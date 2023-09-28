@@ -28,4 +28,7 @@ def exists_word(word, instance):
 
 
 def search_by_word(word, instance):
-    """Aqui irá sua implementação"""
+    def callback(line, content):
+        return {"linha": line + 1, "conteudo": content}
+
+    return content_with_word(word=word, instance=instance, callback=callback)
